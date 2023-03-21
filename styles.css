@@ -1,8 +1,12 @@
 .container {
-  border: 1px black solid;
-  border-radius: 4px;
-  padding: 16px;
+  width: 960px;
 }
 
-.list-items {
+.grid-row {
+  display: flex;
+}
+
+.grid-box {
+  border: 1px solid black;
+  background-color: lightgray;
 }

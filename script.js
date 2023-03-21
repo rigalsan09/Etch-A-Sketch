@@ -1,13 +1,27 @@
-//DOM Manipulation
+const sizeOfGrid = 16;
 
-// GetElementById()
-const title = document.getElementById("main-heading");
+const container = document.querySelector(".container");
 
-alert(title);
-// GetElementByClassName()
+const createGrid = (amountOfGrids) => {
+  for (let i = 0; i < amountOfGrids; i++) {
+    const row = document.createElement("div");
+    row.classList.add("grid-row");
 
-// getElementsByTagName()
+    for (let j = 0; j < amountOfGrids; j++) {
+      const widthAndHeight = 960 / sizeOfGrid;
+      const gridBox = document.createElement("div");
+      gridBox.classList.add("grid-box");
+      gridBox.style.width = `${widthAndHeight}px`;
+      gridBox.style.height = `${widthAndHeight}px`;
+      //adding mouseenter listener to change background color
+      gridBox.addEventListener("mouseenter", () => {
+        gridBox.style.backgroundColor = "black";
+      });
 
-// querySelector()
+      row.appendChild(gridBox);
+    }
+    container.appendChild(row);
+  }
+};
 
-// querySelectorAll()
+createGrid(sizeOfGrid);
